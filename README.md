@@ -108,26 +108,44 @@ For detailed setup instructions, configuration options, and getting started guid
 - **[First Steps](https://docs.tududi.com/getting-started/first-steps)** - Learn the basics and get productive
 - **[Project Sharing](https://docs.tududi.com/features/project-sharing)** - Collaborate with your team
 
-## 🚧 Development
+## 🚧 Local Development
 
-Want to contribute or run Tududi from source? Check out our comprehensive development guide:
-
-**[Development Setup Guide](https://docs.tududi.com/#-development-setup)**
-
-Quick overview:
+### Quick Setup
 
 ```bash
-# Clone and install
-git clone https://github.com/chrisvel/tududi.git
+git clone https://github.com/rchakra4/tududi.git
 cd tududi
 npm install
-
-# Start development servers
-npm run backend:dev   # Terminal 1 - Backend on :3001
-npm run frontend:dev  # Terminal 2 - Frontend on :8080
 ```
 
-For database management, testing, and detailed development instructions, see [docs.tududi.com](https://docs.tududi.com)
+Then start both servers in separate terminals:
+
+```bash
+npm run backend:workshop  # Terminal 1 - Backend on :3002
+npm run frontend:dev      # Terminal 2 - Frontend on :8080
+```
+
+The `backend:workshop` command handles all first-time setup automatically:
+- Creates `.env` from `.env.example` (if missing)
+- Initializes the SQLite database (if missing)
+- Creates an admin user with the credentials from `.env`
+- Starts the backend with auto-reload on file changes
+
+On first run you'll see the login credentials printed to the terminal:
+
+```
+=============================================
+  Backend ready! Login with:
+  Email:    admin@example.com
+  Password: password123
+=============================================
+```
+
+Navigate to [http://localhost:8080](http://localhost:8080) and log in.
+
+> Subsequent runs skip the setup steps and just start the server — your data is preserved.
+
+For detailed development instructions, database management, and testing, see [docs.tududi.com](https://docs.tududi.com)
 
 ## 🔌 API
 
