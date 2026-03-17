@@ -37,7 +37,12 @@ app.use(
     })
 );
 app.use(compression());
-app.use(morgan('combined'));
+const { logInfo } = require('./services/logService');
+app.use(
+    morgan('combined', {
+        stream: { write: (msg) => logInfo(msg.trim()) },
+    })
+);
 
 // CORS configuration
 app.use(

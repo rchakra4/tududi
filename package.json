@@ -165,7 +165,8 @@
     "swagger-ui-express": "^5.0.1",
     "use-debounce": "^10.0.6",
     "uuid": "~11.1.0",
-    "web-push": "^3.6.7"
+    "web-push": "^3.6.7",
+    "winston": "^3.19.0"
   },
   "overrides": {
     "tar": "^7.5.8"
