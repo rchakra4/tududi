@@ -15,7 +15,7 @@ node_modules
 
 public/js/bundle.js
 .aider*
-.claude*
+#.claude*
 
 backend/coverage/
 
